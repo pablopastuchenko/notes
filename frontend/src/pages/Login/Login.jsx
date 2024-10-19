@@ -40,7 +40,7 @@ const Login = () => {
       dispatch(signInStart())
 
       const res = await axios.post(
-        "http://localhost:3000/api/auth/signin",
+        "https://notes-gray-nine.vercel.app/api/auth/signin",
         { email, password },
         { withCredentials: true }
       )
@@ -86,12 +86,12 @@ const Login = () => {
           </button>
 
           <p className="text-sm text-center mt-4">
-            Not registered yet?{" "}
+            Não está registrado ainda?{" "}
             <Link
               to={"/signup"}
               className="font-medium text-[#2B85FF] underline"
             >
-              Create an account
+              Cria sua conta
             </Link>
           </p>
         </form>

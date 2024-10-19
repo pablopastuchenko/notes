@@ -45,7 +45,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
   const addNewNote = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/note/add",
+        "https://notes-gray-nine.vercel.app/api/note/add",
         { title, content, tags },
         { withCredentials: true }
       )
@@ -70,12 +70,12 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
 
   const handleAddNote = () => {
     if (!title) {
-      setError("Please enter the title")
+      setError("Por favor, insira o título.")
       return
     }
 
     if (!content) {
-      setError("Please enter the content")
+      setError("Por favor, insira o conteúdo.")
       return
     }
 
@@ -97,7 +97,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
         <MdClose className="text-xl text-slate-400" />
       </button>
       <div className="flex flex-col gap-2">
-        <label className="input-label text-red-400 uppercase">Title</label>
+        <label className="input-label text-red-400 uppercase">Título</label>
 
         <input
           type="text"
@@ -108,7 +108,7 @@ const AddEditNotes = ({ onClose, noteData, type, getAllNotes }) => {
         />
       </div>
       <div className="flex flex-col gap-2 mt-4">
-        <label className="input-label text-red-400 uppercase">Content</label>
+        <label className="input-label text-red-400 uppercase">Conteúdo</label>
 
         <textarea
           type="text"
